@@ -13,9 +13,10 @@ writeExtraText = True
 extraText   = "Preliminary"
 extraTextFont = 52 
 
+# text sizes and text offsets with respect to the top frame
+# in unit of the top margin size
 lumiTextSize     = 0.6
 lumiTextOffset   = 0.2
-
 cmsTextSize      = 0.75
 cmsTextOffset    = 0.1
 
@@ -23,6 +24,7 @@ relPosX    = 0.045
 relPosY    = 0.035
 relExtraDY = 1.2
 
+# ratio of "CMS" and extra text size
 extraOverCmsTextSize  = 0.76
 
 lumi_13TeV = "20.1 fb^{-1}"
@@ -39,10 +41,12 @@ def CMS_lumi(pad,  iPeriod,  iPosX ):
     alignY_=3
     alignX_=2
     if( iPosX/10==0 ): alignX_=1
+    if( iPosX==0    ): alignX_=1
     if( iPosX==0    ): alignY_=1
     if( iPosX/10==1 ): alignX_=1
     if( iPosX/10==2 ): alignX_=2
     if( iPosX/10==3 ): alignX_=3
+    if( iPosX == 0  ): relPosX = 0.12
     align_ = 10*alignX_ + alignY_
 
     H = pad.GetWh()
@@ -100,7 +104,6 @@ def CMS_lumi(pad,  iPeriod,  iPosX ):
     latex.SetTextFont(42)
     latex.SetTextAlign(31) 
     latex.SetTextSize(lumiTextSize*t)    
-
     latex.DrawLatex(1-r,1-t+lumiTextOffset*t,lumiText)
 
     if( outOfFrame ):
