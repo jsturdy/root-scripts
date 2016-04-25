@@ -1,4 +1,4 @@
-#include "$HOME/.root.d/cms-macros/include/CMS_lumi.h"
+#include "~/.root.d/cms-macros/include/CMS_lumi.h"
 #include <iostream>
 
 void 

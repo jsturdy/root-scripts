@@ -10,6 +10,10 @@ void rootlogon() {
   	    << std::endl << std::endl;
   gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/tdrstyle.C");
   
+  std::cout << "For CMS approved plots with quoted lumi use: CMS_lumi(pad, period, posX);"
+  	    << std::endl << std::endl;
+  gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/CMS_lumi.C");
+  
   /**BaBar style**/
   std::cout << "For BaBaR plots use: gROOT->SetStyle(\"babarStyle\");"
   	    << std::endl << std::endl;
@@ -31,8 +35,9 @@ void rootlogon() {
   // environment is set up.
   //
   TString cmsswbase = getenv("CMSSW_BASE");
-  std::cout << "CMSSW_BASE = " << cmsswbase << std::endl;
+  std::cout << "CMSSW_BASE = " << cmsswbase;
   if (cmsswbase.Length() > 0) {
+    std::cout << " " << cmsswbase.Length() << std::endl;
     //
     // The CMSSW environment is defined (this is true even for FW Lite)
     // so set up the rest.
@@ -44,6 +49,6 @@ void rootlogon() {
     gSystem->Load("libDataFormatsFWLite.so");
     gSystem->Load("libDataFormatsPatCandidates.so");
   }
-
+  std::cout << std::endl
   setTDRStyle();
 }
