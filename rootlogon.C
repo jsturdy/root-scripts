@@ -31,6 +31,7 @@ void rootlogon() {
   // environment is set up.
   //
   TString cmsswbase = getenv("CMSSW_BASE");
+  std::cout << "CMSSW_BASE = " << cmsswbase << std::endl;
   if (cmsswbase.Length() > 0) {
     //
     // The CMSSW environment is defined (this is true even for FW Lite)

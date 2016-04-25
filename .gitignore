@@ -1,0 +1,9 @@
+*
+!*.py
+!*.C
+!*.h
+__init__.py
+!cms-macros
+!README.md
+!LICENSE
+!.gitignore
