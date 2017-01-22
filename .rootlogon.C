@@ -2,6 +2,7 @@
 //#include "~/.root.d/cms-macros/src/babarStyle.C"
 //#include "~/.root.d/cms-macros/src/mikesStyle.C"
 //#include "~/.root.d/cms-macros/src/palettes.C"
+
 void rootlogon() {
   std::cout << std::endl << "Welcome to Jared's rootlogon.C" << std::endl;
 
@@ -9,21 +10,21 @@ void rootlogon() {
   std::cout << "For CMS approved plots use: gROOT->SetStyle(\"tdrStyle\");"
   	    << std::endl << std::endl;
   gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/tdrstyle.C");
-  
+
   std::cout << "For CMS approved plots with quoted lumi use: CMS_lumi(pad, period, posX);"
   	    << std::endl << std::endl;
   gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/CMS_lumi.C");
-  
+
   /**BaBar style**/
   std::cout << "For BaBaR plots use: gROOT->SetStyle(\"babarStyle\");"
   	    << std::endl << std::endl;
   gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/babarStyle.C");
-  
+
   /**Mike's style**/
   std::cout << "For Mike style plots use: gROOT->SetStyle(\"mikesStyle\");"
   	    << std::endl << std::endl;
   gROOT->ProcessLine(".L ~/.root.d/cms-macros/src/mikesStyle.C");
-  
+
   /**Stylish palettes**/
   std::cout << "Defining custom palettes Pal1, Pal2, Pal3 ;"
   	    << std::endl << std::endl;
@@ -49,6 +50,6 @@ void rootlogon() {
     gSystem->Load("libDataFormatsFWLite.so");
     gSystem->Load("libDataFormatsPatCandidates.so");
   }
-  std::cout << std::endl
-  setTDRStyle();
+  std::cout << std::endl;
+  // setTDRStyle();
 }

@@ -1,8 +1,11 @@
+# Ignore everything
 *
+# Don't ignore subdirectories
+!*/
 !*.py
 !*.C
 !*.h
-__init__.py
+!*__init__.py
 !cms-macros
 !README.md
 !LICENSE

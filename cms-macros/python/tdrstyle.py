@@ -12,6 +12,7 @@ def fixOverlay():
 def setTDRStyle():
   """Applies the CMS TDR style to plots"""
   tdrStyle =  rt.TStyle("tdrStyle","Style for P-TDR")
+  print "For CMS approved plots use: gROOT.SetStyle(\"tdrStyle\")"
 
   ### For the canvas:
   tdrStyle.SetCanvasBorderMode(0)
